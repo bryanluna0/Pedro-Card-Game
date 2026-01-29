@@ -54,6 +54,22 @@ class Deck
         this.#stack.push(new Card(0, "Joker"))
     }
 
+    shuffle() {
+        let currentIndex = this.#stack.length;
+
+        // While there remain elements to shuffle...
+        while (currentIndex != 0) 
+        {
+            // Pick a remaining element...
+            let randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [this.#stack[currentIndex], this.#stack[randomIndex]] = [
+            this.#stack[randomIndex], this.#stack[currentIndex]];
+        }
+    }
+
     printCards()
     {
         for (let card in this.#stack)
