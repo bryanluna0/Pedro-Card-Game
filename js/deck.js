@@ -77,6 +77,16 @@ class Deck
             console.log(this.#stack[card]);
         }
     }
+
+    get getTop()
+    {
+        return this.#stack.pop();
+    }
+
+    get length()
+    {
+        return this.#stack.length
+    }
 };
 
 export { Deck }
